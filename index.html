@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello World</title>
+    <script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+    <!--Google-->
+    <link rel="import" href="bower_components/google-map/google-map.html">
+
+    <!--Px-->
+    <link rel="import" href="bower_components/px-data-table/px-data-table.html">
+
+    <!--Iron-->
+    <link rel="import" href="bower_components/iron-ajax/iron-ajax.html">
+  </head>
+  <body>
+    <h1>Hello World</h1>
+    <template is="dom-bind">
+      <iron-ajax
+        auto
+        url="/api/employees"
+        handle-as="json"
+        last-response="{{employees}}"
+        debounce-duration="300">
+      </iron-ajax>
+      <google-map
+        latitude="37.790"
+        longitude="-122.390">
+      </google-map>
+
+      <px-data-table
+        table-data="{{employees}}"
+        language="en"
+        striped="true"
+        filterable="true"
+        sortable="true"
+        single-select="true">
+      </px-data-table>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Header</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Body</td>
+          </tr>
+        </tbody>
+      </table>
+    </template>
+    <style>
+      google-map {
+        width: 500px;
+        height: 500px;
+      }
+    </style>
+  </body>
+</html>

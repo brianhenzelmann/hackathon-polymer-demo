@@ -1,0 +1,16 @@
+{
+  "name": "hackathon",
+  "description": "Simple Polymer demo from scratch",
+  "main": "server.js",
+  "authors": [
+    "brian.henzelmann@ge.com"
+  ],
+  "license": "ISC",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
